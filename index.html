@@ -106,7 +106,46 @@
       return (
         <nav className="fixed top-0 w-full bg-navy-blue/90 dark:bg-modern-gray/90 backdrop-blur-sm z-20 shadow-lg border-b-2 border-teal-accent/30 animate-border-glow">
           <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-blue">David</h1>
+            <div className="flex items-center space-x-6">
+              <h1 className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-blue">David</h1>
+              <div className="hidden md:flex space-x-6">
+                <a href="#about" className="relative text-white dark:text-navy-blue hover:text-teal-accent font-medium transition-colors group">
+                  About
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
+                </a>
+                <a href="#projects" className="relative text-white dark:text-navy-blue hover:text-teal-accent font-medium transition-colors group">
+                  Projects
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
+                </a>
+                <a href="#courses" className="relative text-white dark:text-navy-blue hover:text-teal-accent font-medium transition-colors group">
+                  Courses
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
+                </a>
+              </div>
+            </div>
+            <div className="hidden md:flex items-center space-x-3">
+              <span className="text-white dark:text-navy-blue font-medium text-sm">Connect:</span>
+              <div className="flex space-x-2">
+                <a href="https://www.linkedin.com/in/p1rin/" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="LinkedIn">
+                  <i className="fab fa-linkedin text-lg"></i>
+                </a>
+                <a href="https://www.upwork.com/freelancers/~0103c20831fbcf93b7" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="Upwork">
+                  <i className="fas fa-briefcase text-lg"></i>
+                </a>
+                <a href="https://github.com/devbracho" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="GitHub">
+                  <i className="fab fa-github text-lg"></i>
+                </a>
+                <a href="mailto:devbracho@gmail.com" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="Email">
+                  <i className="fas fa-envelope text-lg"></i>
+                </a>
+                <a href="https://wa.me/584246733485" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="WhatsApp">
+                  <i className="fab fa-whatsapp text-lg"></i>
+                </a>
+                <a href="https://t.me/devbracho" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="Telegram">
+                  <i className="fab fa-telegram text-lg"></i>
+                </a>
+              </div>
+            </div>
             <div className="flex items-center space-x-6">
               <div className="md:hidden">
                 <button onClick={() => setIsOpen(!isOpen)} className="text-white dark:text-navy-blue" aria-label="Toggle navigation menu">
@@ -115,47 +154,21 @@
                   </svg>
                 </button>
               </div>
-              <div className={`md:flex space-x-6 ${isOpen ? "block absolute top-16 left-0 w-full bg-navy-blue/95 dark:bg-modern-gray/95 backdrop-blur-sm p-6" : "hidden"} md:block md:static md:bg-transparent md:p-0`}>
-                <a href="#about" className="relative block text-white dark:text-navy-blue hover:text-teal-accent font-medium py-2 md:py-0 transition-colors group" onClick={() => setIsOpen(false)}>
+              <div className={`md:hidden ${isOpen ? "block absolute top-16 left-0 w-full bg-navy-blue/95 dark:bg-modern-gray/95 backdrop-blur-sm p-6" : "hidden"}`}>
+                <a href="#about" className="relative block text-white dark:text-navy-blue hover:text-teal-accent font-medium py-2 transition-colors group" onClick={() => setIsOpen(false)}>
                   About
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
                 </a>
-                <a href="#projects" className="relative block text-white dark:text-navy-blue hover:text-teal-accent font-medium py-2 md:py-0 transition-colors group" onClick={() => setIsOpen(false)}>
+                <a href="#projects" className="relative block text-white dark:text-navy-blue hover:text-teal-accent font-medium py-2 transition-colors group" onClick={() => setIsOpen(false)}>
                   Projects
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
                 </a>
-                <a href="#courses" className="relative block text-white dark:text-navy-blue hover:text-teal-accent font-medium py-2 md:py-0 transition-colors group" onClick={() => setIsOpen(false)}>
+                <a href="#courses" className="relative block text-white dark:text-navy-blue hover:text-teal-accent font-medium py-2 transition-colors group" onClick={() => setIsOpen(false)}>
                   Courses
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
                 </a>
-                <a href="#contact" className="relative block text-white dark:text-navy-blue hover:text-teal-accent font-medium py-2 md:py-0 transition-colors group" onClick={() => setIsOpen(false)}>
-                  Contact
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
-                </a>
               </div>
-              <div className="hidden md:flex items-center space-x-3">
-                <span className="text-white dark:text-navy-blue font-medium text-sm">Connect:</span>
-                <div className="flex space-x-2">
-                  <a href="https://www.linkedin.com/in/p1rin/" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="LinkedIn">
-                    <i className="fab fa-linkedin text-lg"></i>
-                  </a>
-                  <a href="https://www.upwork.com/freelancers/~0103c20831fbcf93b7" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="Upwork">
-                    <i className="fas fa-briefcase text-lg"></i>
-                  </a>
-                  <a href="https://github.com/devbracho" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="GitHub">
-                    <i className="fab fa-github text-lg"></i>
-                  </a>
-                  <a href="mailto:devbracho@gmail.com" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="Email">
-                    <i className="fas fa-envelope text-lg"></i>
-                  </a>
-                  <a href="https://wa.me/584246733485" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="WhatsApp">
-                    <i className="fab fa-whatsapp text-lg"></i>
-                  </a>
-                  <a href="https://t.me/devbracho" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="Telegram">
-                    <i className="fab fa-telegram text-lg"></i>
-                  </a>
-                </div>
-              </div>
+              <a href="/DBG-resume.pdf" download className="bg-teal-accent text-white px-3 py-1 rounded-full font-medium hover:bg-teal-accent/80 transition-colors text-sm">Resume</a>
               <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
             </div>
           </div>
@@ -320,7 +333,6 @@
           <About />
           <Projects />
           <Courses />
-          <Contact />
           <Footer />
         </div>
       );
