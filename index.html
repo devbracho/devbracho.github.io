@@ -201,8 +201,13 @@
               Senior DevOps Engineer and Linux systems specialist with 15+ years of hands-on experience. I manage production infrastructure, build CI/CD pipelines, automate complex workflows, and harden systems under real-world conditions. I work with AWS, Docker, Kubernetes, Ansible, Python, and Bash on a daily basis. Top Rated on Upwork with 100% Job Success across 16 completed projects.
             </p>
           </div>
-          <div className="md:w-1/2 bg-deep-navy/50 dark:bg-light-sky/50 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-teal-glow hover:scale-105 transition-all duration-300 border border-teal-accent/50">
-            <img src="https://github-readme-stats.vercel.app/api?username=devbracho&show_icons=true&theme=dark&hide_border=true&bg_color=00000000&title_color=008080&icon_color=008080&text_color=ffffff" alt="GitHub Stats" className="w-full rounded-lg" onError={(e) => e.target.style.display='none'} />
+          <div className="md:w-1/2 bg-deep-navy/50 dark:bg-light-sky/50 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-teal-glow transition-all duration-300 border border-teal-accent/50">
+            <h3 className="text-xl font-semibold mb-4 text-teal-accent">Core Skills</h3>
+            <div className="flex flex-wrap gap-2">
+              {['Linux', 'AWS', 'Docker', 'Kubernetes', 'Ansible', 'CI/CD', 'Python', 'Bash', 'Jenkins', 'GitHub Actions', 'Nginx', 'PostgreSQL', 'DNS', 'SSL/TLS', 'Terraform', 'Networking'].map(skill => (
+                <span key={skill} className="bg-teal-accent/20 border border-teal-accent/50 text-teal-accent px-3 py-1 rounded-full text-sm font-medium">{skill}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
