@@ -1,64 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>David "p1ro" Bracho</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-      .dark-mode {
-        background-color: #1a202c;
-        color: white;
-      }
-    </style>
-  </head>
-  <body class="container mx-auto mt-20 text-gray-900 dark-mode">
-    <div class="text-center">
-      <h1 class="text-3xl font-bold">David "p1ro" Bracho</h1>
-      <p class="font-mono text-base md:text-lg mt-5">
-        This site is about my development, course and practices in doing, with links to my GitHub for code examples and helping others.<br>
-        I have a strong IT background, setting up OS (windows-linux) apps and services.<br>
-        Have been working with Python for a few years.
-      </p>
-    </div>
-    <div class="mt-10">
-      <h4 class="text-xl font-semibold underline">Skills used on this site</h4>
-      <ol class="list-decimal list-inside mt-4">
-        <li>
-          HTML
-          <ul class="list-disc list-inside ml-4">
-            <li>HTML <a href="https://github.com/P1ro/p1ro.github.io/blob/main/index.html" class="text-blue-500 underline" title="Link to HTML source on GitHub">file</a></li>
-          </ul>
-        </li>
-        <li>
-          Style
-          <ul class="list-disc list-inside ml-4">
-            <li>Change CSS to Tailwind CSS:
-              <a href="https://github.com/P1ro/p1ro.github.io/blob/main/css/style.css" class="text-blue-500 underline" title="Link to CSS on this site">bootstrap.min.css</a>
-            </li>
-          </ul>
-        </li>
-        <li>Git - GitHub using SSH keys to pull/push</li>
-        <li>
-          Git Actions using the following test:
-          <ul class="list-disc list-inside ml-4">
-            <li>HTML Validations YAML <a href="https://github.com/P1ro/p1ro.github.io/blob/main/.github/workflows/html-validations.yaml" class="text-blue-500 underline" title="Link to YAML file">html-validations.yaml</a></li>
-          </ul>
-        </li>
-        <li>
-          The code was made with:
-          <ul class="list-disc list-inside ml-4">
-            <li>VSCode on Windows</li>
-            <li>Stored in my Linux box</li>
-            <li>Putty with SSH keys to commit, push, pull, merge, etc.</li>
-            <li>
-              Samba share to:
-              <ul class="list-disc list-inside ml-4">
-                <li>Access the code remotely from Windows</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ol>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of David, a system administrator and DevOps enthusiast with expertise in Linux, Python, and cloud technologies.">
+  <meta name="keywords" content="David, DevOps, System Administrator, Linux, Python, AWS, Kubernetes, Portfolio">
+  <meta name="author" content="David Bracho">
+  <title>David | DevOps & System Administration Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'navy-blue': '#1E3A8A',
+            'modern-gray': '#D1D5DB',
+            'deep-navy': '#172554',
+            'light-sky': '#BAE6FD',
+            'teal-accent': '#008080',
+            'gradient-blue': 'linear-gradient(135deg, #1E3A8A, #38BDF8)',
+          },
+          fontFamily: {
+            'sans': ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.6s ease-out',
+            'scale-tilt': 'scaleTilt 0.3s ease-in-out',
+            'border-glow': 'borderGlow 3s linear infinite',
+            'underline-slide': 'underlineSlide 0.3s ease-in-out forwards',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            scaleTilt: {
+              '0%': { transform: 'scale(1) rotate(0deg)' },
+              '100%': { transform: 'scale(1.05) rotate(2deg)' },
+            },
+            borderGlow: {
+              '0%': { borderColor: 'rgba(0, 128, 128, 0.2)' },
+              '50%': { borderColor: 'rgba(0, 128, 128, 0.5)' },
+              '100%': { borderColor: 'rgba(0, 128, 128, 0.2)' },
+            },
+            underlineSlide: {
+              '0%': { transform: 'scaleX(0)', transformOrigin: 'left' },
+              '100%': { transform: 'scaleX(1)', transformOrigin: 'left' },
+            },
+          },
+          backdropBlur: {
+            'sm': '4px',
+          },
+          boxShadow: {
+            'glow': '0 0 15px rgba(0, 128, 128, 0.5)',
+            'toggle-glow': '0 0 10px rgba(0, 128, 128, 0.7)',
+            'teal-glow': '0 0 10px rgba(0, 128, 128, 0.5)',
+          },
+        },
+      },
+    };
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PQSV83ND');</script>
+  <!-- End Google Tag Manager -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="icon" href="https://github.githubassets.com/favicon.ico">
+</head>
+<body class="min-h-screen transition-colors duration-500 font-sans">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQSV83ND"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    // Theme Toggle Component
+    const ThemeToggle = ({ isDark, toggleTheme }) => (
+      <label className="relative inline-flex items-center cursor-pointer">
+        <input
+          type="checkbox"
+          checked={isDark}
+          onChange={() => toggleTheme()}
+          className="sr-only"
+          aria-label="Toggle between dark and light mode"
+        />
+        <div className="w-12 h-6 bg-gradient-to-r from-gray-600 to-gray-800 dark:from-gray-300 dark:to-gray-500 rounded-full shadow-inner"></div>
+        <div className={`absolute w-5 h-5 bg-teal-accent rounded-full shadow-toggle-glow transition-transform duration-300 ${isDark ? 'translate-x-6' : 'translate-x-1'} top-0.5 left-0`}></div>
+        <span className="ml-3 text-sm font-medium text-white dark:text-navy-blue">{isDark ? 'Light' : 'Dark'}</span>
+      </label>
+    );
+
+    // Navigation Component
+    const NavBar = ({ isDark, toggleTheme }) => {
+      const [isOpen, setIsOpen] = useState(false);
+      return (
+        <nav className="fixed top-0 w-full bg-navy-blue/90 dark:bg-modern-gray/90 backdrop-blur-sm z-20 shadow-lg border-b-2 border-teal-accent/30 animate-border-glow">
+          <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div className="flex items-center space-x-6">
+              <h1 className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-blue">David</h1>
+              <div className="hidden md:flex space-x-6">
+                <a href="#about" className="relative text-white dark:text-navy-blue hover:text-teal-accent font-medium transition-colors group">
+                  About
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
+                </a>
+                <a href="#projects" className="relative text-white dark:text-navy-blue hover:text-teal-accent font-medium transition-colors group">
+                  Projects
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
+                </a>
+                <a href="#courses" className="relative text-white dark:text-navy-blue hover:text-teal-accent font-medium transition-colors group">
+                  Courses
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
+                </a>
+                <a href="#contact" className="relative text-white dark:text-navy-blue hover:text-teal-accent font-medium transition-colors group">
+                  Contact
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
+                </a>
+              </div>
+            </div>
+            <div className="hidden md:flex items-center space-x-3">
+              <span className="text-white dark:text-navy-blue font-medium text-sm">Connect:</span>
+              <div className="flex space-x-2">
+                <a href="https://www.linkedin.com/in/p1rin/" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="LinkedIn">
+                  <i className="fab fa-linkedin text-lg"></i>
+                </a>
+                <a href="https://www.upwork.com/freelancers/~0103c20831fbcf93b7" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="Upwork">
+                  <i className="fas fa-briefcase text-lg"></i>
+                </a>
+                <a href="https://github.com/devbracho" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="GitHub">
+                  <i className="fab fa-github text-lg"></i>
+                </a>
+                <a href="mailto:devbracho@gmail.com" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="Email">
+                  <i className="fas fa-envelope text-lg"></i>
+                </a>
+                <a href="https://wa.me/584246733485" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="WhatsApp">
+                  <i className="fab fa-whatsapp text-lg"></i>
+                </a>
+                <a href="https://t.me/devbracho" target="_blank" rel="noopener noreferrer" className="text-teal-accent hover:text-teal-accent/80 transition-colors" title="Telegram">
+                  <i className="fab fa-telegram text-lg"></i>
+                </a>
+              </div>
+            </div>
+            <div className="flex items-center space-x-6">
+              <div className="md:hidden">
+                <button onClick={() => setIsOpen(!isOpen)} className="text-white dark:text-navy-blue" aria-label="Toggle navigation menu">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+                  </svg>
+                </button>
+              </div>
+              <div className={`md:hidden ${isOpen ? "block absolute top-16 left-0 w-full bg-navy-blue/95 dark:bg-modern-gray/95 backdrop-blur-sm p-6" : "hidden"}`}>
+                <a href="#about" className="relative block text-white dark:text-navy-blue hover:text-teal-accent font-medium py-2 transition-colors group" onClick={() => setIsOpen(false)}>
+                  About
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
+                </a>
+                <a href="#projects" className="relative block text-white dark:text-navy-blue hover:text-teal-accent font-medium py-2 transition-colors group" onClick={() => setIsOpen(false)}>
+                  Projects
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
+                </a>
+                <a href="#courses" className="relative block text-white dark:text-navy-blue hover:text-teal-accent font-medium py-2 transition-colors group" onClick={() => setIsOpen(false)}>
+                  Courses
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-accent transform scale-x-0 group-hover:animate-underline-slide"></span>
+                </a>
+              </div>
+              <a href="/DBG_resume.pdf" download className="bg-teal-accent text-white px-3 py-1 rounded-full font-medium hover:bg-teal-accent/80 transition-colors text-sm">Resume</a>
+              <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
+            </div>
+          </div>
+        </nav>
+      );
+    };
+
+    // Hero Section
+    const Hero = () => (
+      <section className="min-h-screen flex items-center justify-center bg-gradient-blue text-white dark:text-navy-blue">
+        <div className="text-center max-w-4xl mx-auto px-4 animate-fade-in-up">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-4 text-white">David Bracho</h1>
+          <p className="text-xl md:text-2xl font-medium mb-6">System Administrator & DevOps</p>
+          <a href="#about" className="inline-block bg-teal-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-teal-accent/80 transition-colors animate-pulse">Explore My Work</a>
+        </div>
+      </section>
+    );
+
+    // About Component
+    const About = () => (
+      <section id="about" className="py-20 max-w-7xl mx-auto px-4 bg-navy-blue/50 dark:bg-modern-gray/50 backdrop-blur-sm text-white dark:text-navy-blue">
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white dark:text-navy-blue">About</h2>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="md:w-1/2">
+            <p className="text-lg leading-relaxed mb-4">
+              Senior DevOps Engineer and Linux systems specialist with 15+ years of hands-on experience. I manage production infrastructure, build CI/CD pipelines, automate complex workflows, and harden systems under real-world conditions. I work with AWS, Docker, Kubernetes, Ansible, Python, and Bash on a daily basis. Top Rated on Upwork with 100% Job Success across 16 completed projects.
+            </p>
+          </div>
+          <div className="md:w-1/2 bg-deep-navy/50 dark:bg-light-sky/50 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-teal-glow transition-all duration-300 border border-teal-accent/50">
+            <h3 className="text-xl font-semibold mb-4 text-teal-accent">Core Skills</h3>
+            <div className="flex flex-wrap gap-2">
+              {['Linux', 'AWS', 'Docker', 'Kubernetes', 'Ansible', 'CI/CD', 'Python', 'Bash', 'Jenkins', 'GitHub Actions', 'Nginx', 'PostgreSQL', 'DNS', 'SSL/TLS', 'Terraform', 'Networking'].map(skill => (
+                <span key={skill} className="bg-teal-accent/20 border border-teal-accent/50 text-teal-accent px-3 py-1 rounded-full text-sm font-medium">{skill}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+
+    // Project Component
+    const Project = ({ title, description, tech, link }) => (
+      <div className="bg-deep-navy/50 dark:bg-light-sky/50 backdrop-blur-sm text-white dark:text-navy-blue p-6 rounded-xl shadow-lg hover:shadow-teal-glow hover:scale-105 transition-all duration-300 border border-teal-accent/50">
+        <h3 className="text-2xl font-semibold mb-3">{title}</h3>
+        <p className="mb-4 text-gray-200 dark:text-gray-700">{description}</p>
+        <p className="text-sm text-gray-300 dark:text-gray-600 mb-4">Tech: {tech}</p>
+        {link ? (
+          <a href={link} target="_blank" rel="noopener noreferrer" className="inline-block bg-teal-accent text-white px-4 py-2 rounded-full font-medium hover:bg-teal-accent/80 transition-colors">View on GitHub</a>
+        ) : (
+          <span className="inline-block bg-gray-600 dark:bg-gray-400 text-white dark:text-white px-4 py-2 rounded-full text-sm font-medium">Client Project</span>
+        )}
+      </div>
+    );
+
+    // Projects Section
+    const Projects = () => (
+      <section id="projects" className="py-20 max-w-7xl mx-auto px-4 bg-navy-blue/50 dark:bg-modern-gray/50 backdrop-blur-sm text-white dark:text-navy-blue">
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white dark:text-navy-blue">Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Project
+            title="Python System Monitor"
+            description="A simple system resources monitor written in Python to track CPU, memory, and disk usage."
+            tech="Python"
+            link="https://github.com/devbracho/syspynfo"
+          />
+          <Project
+            title="Odoo Deployment"
+            description="Odoo deployments using Kubernetes and Docker Compose with PostgreSQL for scalable ERP solutions."
+            tech="Docker, Kubernetes, PostgreSQL, Odoo"
+            link="https://github.com/devbracho/odoo-examples"
+          />
+          <Project
+            title="Remove Comments from Files"
+            description="A utility to strip comments from source code files, improving code readability and processing."
+            tech="Python"
+            link="https://github.com/devbracho/remove_file_comments"
+          />
+          <Project
+            title="Discord Music Bot"
+            description="A basic Discord music bot written in Python, capable of queuing and playing audio from YouTube."
+            tech="Python, Discord.py, FFmpeg"
+            link="https://github.com/devbracho/ppdisbot"
+          />
+          <Project
+            title="nftables Suite"
+            description="A firewall management suite that generates and applies nftables rulesets from a plain-text policy file. Supports dry runs, safe-apply with auto-rollback, per-user egress control, and structured logging. Used across multiple production server environments."
+            tech="Bash, Python, nftables, systemd"
+            link="https://github.com/devbracho/nftables_suite"
+          />
+          <Project
+            title="PDF Editing Utilities"
+            description="Small Python scripts for a PDF workflow: convert text files to PDF, inspect font properties in existing PDFs, and replace text while preserving style."
+            tech="Python, PyMuPDF, ReportLab"
+            link="https://github.com/devbracho/pdfs-edits"
+          />
+          <Project
+            title="xml2vhdl"
+            description="A Python 3.12 (updated) tool that generates VHDL register-map source files from XML descriptors, enabling automated hardware interface code generation."
+            tech="Python, VHDL"
+            link="https://github.com/devbracho/xml2vhdl"
+          />
+          <Project
+            title="Production Database Backup & Disaster Recovery"
+            description="Designed and implemented a full backup and DR system for a 132GB TimescaleDB production database. pgBackRest to AWS S3 with 82% compression (132GB to 24GB), 14-day retention policy, daily automated runs, and a tested end-to-end recovery time of 24 minutes. Includes blue-green deployment procedures for zero-downtime updates."
+            tech="PostgreSQL, TimescaleDB, pgBackRest, AWS S3, systemd, Bash"            link="https://github.com/devbracho/pgbackrest-postgresql-s3"          />
+          <Project
+            title="Linux Infrastructure & Monitoring Stack"
+            description="Built a complete production monitoring and security stack for a 3-machine Linux fleet and NAS. Deployed Grafana, Loki, Prometheus, and Promtail for metrics and log aggregation. Implemented Borgmatic automated backups, auditd with 28+ rules and a Python/Flask audit log web UI, WireGuard VPN, and nftables firewall policies with role-based access control."
+            tech="Linux, Prometheus, Grafana, Loki, Borgmatic, WireGuard, nftables, Python, Bash"
+          />
+          <Project
+            title="Bare Metal MVP Server Setup"
+            description="Full server build from bare metal to production for an MVP application. Covered RAID1 storage, MongoDB and Redis configuration, Node.js environment, Nginx reverse proxy with SSL, Grafana and Prometheus monitoring with Alertmanager SMTP alerts, and a GitHub-triggered CI/CD pipeline for automated API deployments."
+            tech="Ubuntu, RAID1, MongoDB, Redis, Node.js, Nginx, Prometheus, Grafana, GitHub Actions, Bash"
+          />
+          <Project
+            title="AWS EKS Kubernetes Operations"
+            description="Advanced Kubernetes operations on a multi-account AWS environment. Deployed the Zalando PostgreSQL operator with S3 backup integration, Prometheus exporter sidecars, GitHub private runners inside the cluster, and configured VPN connectivity between AWS accounts. Includes full restore procedures and replication monitoring."
+            tech="AWS EKS, Kubernetes, Zalando PostgreSQL Operator, Prometheus, GitHub Actions, Bash"
+          />
+          <Project
+            title="Multi-Service Self-Hosted Deployment"
+            description="End-to-end deployment of a complex self-hosted platform across 10+ microservices using Docker Compose. Services include CockroachDB, Redpanda message queue, MinIO file storage, and Nginx with SSL. Included server hardening with UFW, fail2ban, and automatic security updates."
+            tech="Docker Compose, CockroachDB, Redpanda, MinIO, Nginx, Ubuntu, Bash"
+          />
+          <Project
+            title="GitLab CI/CD & Kubernetes DevOps Pipeline"
+            description="Designed and implemented an 11-stage CI/CD pipeline on GitLab with GitFlow branch enforcement, multi-environment Kubernetes deployment (dev/staging/production), automated security scanning (SAST, dependency scan, image scanning), and quality gates with configurable SLOs (error rate under 2%, p95 latency thresholds). Includes automated rollback and post-deployment health checks."
+            tech="GitLab CI/CD, Kubernetes, Docker, Prometheus, Grafana, Bash"
+          />
+        </div>
+      </section>
+    );
+
+    // Course Component
+    const Course = ({ title, provider, link }) => (
+      <div className="bg-deep-navy/50 dark:bg-light-sky/50 backdrop-blur-sm text-white dark:text-navy-blue p-6 rounded-xl shadow-lg hover:shadow-teal-glow hover:scale-105 transition-all duration-300 border border-teal-accent/50">
+        <h3 className="text-lg font-semibold mb-2">{title}</h3>
+        <p className="text-sm text-gray-300 dark:text-gray-600 mb-3">{provider}</p>
+        <a href={link} target="_blank" rel="noopener noreferrer" className="inline-block bg-teal-accent text-white px-4 py-2 rounded-full font-medium hover:bg-teal-accent/80 transition-colors">View Certificate</a>
+      </div>
+    );
+
+    // Courses Section
+    const Courses = () => (
+      <section id="courses" className="py-20 max-w-7xl mx-auto px-4 bg-navy-blue/50 dark:bg-modern-gray/50 backdrop-blur-sm text-white dark:text-navy-blue">
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white dark:text-navy-blue">Certificates</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Course
+            title="Troubleshooting and Debugging Techniques"
+            provider="Coursera"
+            link="https://www.coursera.org/account/accomplishments/certificate/G3U9JKSYWWDF"
+          />
+          <Course
+            title="AWS Cloud Technical Essentials"
+            provider="Coursera"
+            link="https://www.coursera.org/account/accomplishments/certificate/9UP4LYSRKUNP"
+          />
+          <Course
+            title="DevOps on AWS: Code, Build, and Test"
+            provider="Coursera"
+            link="https://www.coursera.org/account/accomplishments/certificate/VUZSB3CN2YZL"
+          />
+          <Course
+            title="DevOps on AWS Specialization"
+            provider="Coursera"
+            link="https://www.coursera.org/account/accomplishments/specialization/certificate/EXR988TVPWUQ"
+          />
+          <Course
+            title="Using Python to Interact with the Operating System"
+            provider="Coursera"
+            link="https://www.coursera.org/account/accomplishments/certificate/ZMV72S39BRLQ"
+          />
+          <Course
+            title="Introduction to Back-End Development"
+            provider="Coursera"
+            link="https://www.coursera.org/account/accomplishments/certificate/WHJT55UZQAW3"
+          />
+        </div>
+      </section>
+    );
+
+    // Contact Component
+    const Contact = () => (
+      <section id="contact" className="py-20 max-w-7xl mx-auto px-4 bg-navy-blue/50 dark:bg-modern-gray/50 backdrop-blur-sm text-white dark:text-navy-blue">
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white dark:text-navy-blue">Contact</h2>
+        <p className="text-lg mb-6 text-center">Reach out to me for collaboration or opportunities!</p>
+        <a href="/DBG_resume.pdf" download className="inline-block bg-teal-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-teal-accent/80 transition-colors animate-pulse">Download Resume</a>
+      </section>
+    );
+
+    // Footer Component
+    const Footer = () => (
+      <footer className="bg-navy-blue dark:bg-modern-gray p-6 text-center text-white dark:text-navy-blue border-t border-teal-accent/20">
+        <p className="text-sm">© 2026 David Bracho. All rights reserved.</p>
+      </footer>
+    );
+
+    // Main App Component
+    const App = () => {
+      const [isDark, setIsDark] = useState(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) return savedTheme === 'dark';
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      });
+
+      useEffect(() => {
+        document.documentElement.classList.toggle('dark', isDark);
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      }, [isDark]);
+
+      const toggleTheme = () => setIsDark(prev => !prev);
+
+      return (
+        <div className="bg-navy-blue dark:bg-modern-gray text-white dark:text-navy-blue">
+          <NavBar isDark={isDark} toggleTheme={toggleTheme} />
+          <Hero />
+          <About />
+          <Projects />
+          <Courses />
+          <Footer />
+        </div>
+      );
+    };
+
+    // Render the App
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
 </html>
