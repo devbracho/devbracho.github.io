@@ -219,7 +219,11 @@
         <h3 className="text-2xl font-semibold mb-3">{title}</h3>
         <p className="mb-4 text-gray-200 dark:text-gray-700">{description}</p>
         <p className="text-sm text-gray-300 dark:text-gray-600 mb-4">Tech: {tech}</p>
-        <a href={link} target="_blank" rel="noopener noreferrer" className="inline-block bg-teal-accent text-white px-4 py-2 rounded-full font-medium hover:bg-teal-accent/80 transition-colors">View on GitHub</a>
+        {link ? (
+          <a href={link} target="_blank" rel="noopener noreferrer" className="inline-block bg-teal-accent text-white px-4 py-2 rounded-full font-medium hover:bg-teal-accent/80 transition-colors">View on GitHub</a>
+        ) : (
+          <span className="inline-block bg-gray-600 dark:bg-gray-400 text-white dark:text-white px-4 py-2 rounded-full text-sm font-medium">Client Project</span>
+        )}
       </div>
     );
 
@@ -254,7 +258,7 @@
           />
           <Project
             title="nftables Suite"
-            description="A firewall management suite that generates and applies nftables rulesets from a plain-text policy file. Supports dry runs, safe-apply with auto-rollback, per-user egress control, and structured logging."
+            description="A firewall management suite that generates and applies nftables rulesets from a plain-text policy file. Supports dry runs, safe-apply with auto-rollback, per-user egress control, and structured logging. Used across multiple production server environments."
             tech="Bash, Python, nftables, systemd"
             link="https://github.com/devbracho/nftables_suite"
           />
@@ -269,6 +273,36 @@
             description="A Python 3.12 (updated) tool that generates VHDL register-map source files from XML descriptors, enabling automated hardware interface code generation."
             tech="Python, VHDL"
             link="https://github.com/devbracho/xml2vhdl"
+          />
+          <Project
+            title="Production Database Backup & Disaster Recovery"
+            description="Designed and implemented a full backup and DR system for a 132GB TimescaleDB production database. pgBackRest to AWS S3 with 82% compression (132GB to 24GB), 14-day retention policy, daily automated runs, and a tested end-to-end recovery time of 24 minutes. Includes blue-green deployment procedures for zero-downtime updates."
+            tech="PostgreSQL, TimescaleDB, pgBackRest, AWS S3, systemd, Bash"
+          />
+          <Project
+            title="Linux Infrastructure & Monitoring Stack"
+            description="Built a complete production monitoring and security stack for a 3-machine Linux fleet and NAS. Deployed Grafana, Loki, Prometheus, and Promtail for metrics and log aggregation. Implemented Borgmatic automated backups, auditd with 28+ rules and a Python/Flask audit log web UI, WireGuard VPN, and nftables firewall policies with role-based access control."
+            tech="Linux, Prometheus, Grafana, Loki, Borgmatic, WireGuard, nftables, Python, Bash"
+          />
+          <Project
+            title="Bare Metal MVP Server Setup"
+            description="Full server build from bare metal to production for an MVP application. Covered RAID1 storage, MongoDB and Redis configuration, Node.js environment, Nginx reverse proxy with SSL, Grafana and Prometheus monitoring with Alertmanager SMTP alerts, and a GitHub-triggered CI/CD pipeline for automated API deployments."
+            tech="Ubuntu, RAID1, MongoDB, Redis, Node.js, Nginx, Prometheus, Grafana, GitHub Actions, Bash"
+          />
+          <Project
+            title="AWS EKS Kubernetes Operations"
+            description="Advanced Kubernetes operations on a multi-account AWS environment. Deployed the Zalando PostgreSQL operator with S3 backup integration, Prometheus exporter sidecars, GitHub private runners inside the cluster, and configured VPN connectivity between AWS accounts. Includes full restore procedures and replication monitoring."
+            tech="AWS EKS, Kubernetes, Zalando PostgreSQL Operator, Prometheus, GitHub Actions, Bash"
+          />
+          <Project
+            title="Multi-Service Self-Hosted Deployment"
+            description="End-to-end deployment of a complex self-hosted platform across 10+ microservices using Docker Compose. Services include CockroachDB, Redpanda message queue, MinIO file storage, and Nginx with SSL. Included server hardening with UFW, fail2ban, and automatic security updates."
+            tech="Docker Compose, CockroachDB, Redpanda, MinIO, Nginx, Ubuntu, Bash"
+          />
+          <Project
+            title="GitLab CI/CD & Kubernetes DevOps Pipeline"
+            description="Designed and implemented an 11-stage CI/CD pipeline on GitLab with GitFlow branch enforcement, multi-environment Kubernetes deployment (dev/staging/production), automated security scanning (SAST, dependency scan, image scanning), and quality gates with configurable SLOs (error rate under 2%, p95 latency thresholds). Includes automated rollback and post-deployment health checks."
+            tech="GitLab CI/CD, Kubernetes, Docker, Prometheus, Grafana, Bash"
           />
         </div>
       </section>
