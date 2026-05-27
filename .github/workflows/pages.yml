@@ -3,8 +3,6 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: ["main"]
-  pull_request:
-    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -14,25 +12,34 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  build:
+  lint:
+    name: Lint HTML
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '14.x'
+          node-version: '22.x'
 
-      - name: Install dependencies
-        run: npm install html-validator-cli
+      - name: Install htmlhint
+        run: npm install -g htmlhint
 
-      - name: Validate HTML
-        run: npx html-validator-cli --file index.html --verbose
+      - name: Lint HTML
+        run: htmlhint index.html
+
+  build:
+    name: Build & Upload
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -43,8 +50,10 @@ jobs:
           path: '.'
 
   deploy:
+    name: Deploy
     needs: build
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
