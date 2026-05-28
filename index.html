@@ -214,7 +214,7 @@
     );
 
     // Project Component
-    const Project = ({ title, description, tech, link }) => (
+    const Project = ({ title, description, tech, link, badge }) => (
       <div className="bg-deep-navy/50 dark:bg-light-sky/50 backdrop-blur-sm text-white dark:text-navy-blue p-6 rounded-xl shadow-lg hover:shadow-teal-glow hover:scale-105 transition-all duration-300 border border-teal-accent/50">
         <h3 className="text-2xl font-semibold mb-3">{title}</h3>
         <p className="mb-4 text-gray-200 dark:text-gray-700">{description}</p>
@@ -222,7 +222,7 @@
         {link ? (
           <a href={link} target="_blank" rel="noopener noreferrer" className="inline-block bg-teal-accent text-white px-4 py-2 rounded-full font-medium hover:bg-teal-accent/80 transition-colors">View on GitHub</a>
         ) : (
-          <span className="inline-block bg-gray-600 dark:bg-gray-400 text-white dark:text-white px-4 py-2 rounded-full text-sm font-medium">Client Project</span>
+          <span className="inline-block bg-gray-600 dark:bg-gray-400 text-white dark:text-white px-4 py-2 rounded-full text-sm font-medium">{badge || 'Client Project'}</span>
         )}
       </div>
     );
@@ -303,6 +303,24 @@
             title="GitLab CI/CD & Kubernetes DevOps Pipeline"
             description="Designed and implemented an 11-stage CI/CD pipeline on GitLab with GitFlow branch enforcement, multi-environment Kubernetes deployment (dev/staging/production), automated security scanning (SAST, dependency scan, image scanning), and quality gates with configurable SLOs (error rate under 2%, p95 latency thresholds). Includes automated rollback and post-deployment health checks."
             tech="GitLab CI/CD, Kubernetes, Docker, Prometheus, Grafana, Bash"
+          />
+          <Project
+            title="Telegram Media Pipeline Bot"
+            description="Production async Telegram bot that fetches short-form video from Instagram, TikTok, and YouTube Shorts, ranks results by a deterministic recency-plus-engagement score, deduplicates against a persistent store, and posts the top items to a Telegram channel on a configurable schedule. Includes APScheduler background jobs, custom bot commands (/status, /run_now), dry-run mode for safe previews, and a multi-platform fetcher layer (instaloader, yt-dlp)."
+            tech="Python, aiogram, APScheduler, yt-dlp, instaloader"
+            badge="Private Repo"
+          />
+          <Project
+            title="AI Image Generation Discord Bot"
+            description="Production Discord bot integrating an external AI image generation API (Replicate) with a character management layer for AI-generated personalities. Modular command loader, async architecture, and structured handling for API rate limits, retries, and prompt-driven generation flows. Used as a foundation for multiple community engagement features."
+            tech="Python, discord.py, Replicate API, Async I/O"
+            badge="Private Repo"
+          />
+          <Project
+            title="LLM-Powered Discord Bot with Voice"
+            description="Production Discord bot combining LLM chat (OpenAI via embedchain), Whisper-based audio transcription, and TTS output (edge-tts, ElevenLabs). Async architecture with Tortoise ORM, structured logging, and command analytics. Demonstrates end-to-end LLM API integration patterns: rate limiting, retries, structured output parsing, and multi-provider orchestration."
+            tech="Python, discord.py, OpenAI, embedchain, Whisper, edge-tts, ElevenLabs, Tortoise ORM"
+            badge="Private Repo"
           />
         </div>
       </section>
